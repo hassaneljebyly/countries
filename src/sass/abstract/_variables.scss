@@ -1,0 +1,54 @@
+// ## Colors
+
+$Very-Dark-Blue-d : hsl(207, 26%, 17%);
+$Very-Dark-Blue-l : hsl(200, 15%, 8%);
+$Dark-Blue : hsl(209, 23%, 22%);
+$Dark-Gray : hsl(0, 0%, 52%);
+$Very-Light-Gray : hsl(0, 0%, 98%);
+$White : hsl(0, 0%, 100%);
+
+
+$colors: (
+  "900" :$Very-Dark-Blue-d,
+  "800" :$Very-Dark-Blue-l,
+  "400" :$Dark-Blue,
+  "300" :$Dark-Gray,
+  "200" :$Very-Light-Gray,
+  "100" :$White,
+);
+
+
+// ## Typography
+
+$font-sizes: (
+  "--fs-100": clamp(1rem, 0.27vw + 0.95rem, 1.19rem),
+  "--fs-200": clamp(1.25rem, 0.48vw + 1.15rem, 1.58rem),
+  "--fs-300": clamp(1.56rem, 0.78vw + 1.41rem, 2.11rem),
+  "--fs-400": clamp(1.95rem, 1.23vw + 1.71rem, 2.81rem),
+  "--fs-500": clamp(2.44rem, 1.87vw + 2.07rem, 3.75rem),
+  "--fs-600": clamp(3.05rem, 2.78vw + 2.5rem, 5rem),
+  "--fs-700": clamp(3.81rem, 4.07vw + 3rem, 6.66rem),
+  "--fs-800": clamp(4.77rem, 5.87vw + 3.59rem, 8.88rem),
+  "--fs-900": clamp(5.96rem, 8.4vw + 4.28rem, 11.84rem),
+);
+
+
+$font-weights: (
+  "--fw-extraBold": 800,
+  "--fw-semiBold": 600,
+  "--fw-light": 300,
+);
+
+$font-family: nunito, sans-serif;
+
+// ## Break Points
+
+$base-font-size : 16; // px
+
+$breakpoints: (
+  "mobile-s": #{calc(325 / $base-font-size)}em,
+  "mobile": #{calc(450 / $base-font-size)}em,
+  "tablet": #{calc(790 / $base-font-size)}em,
+  "desktop": #{calc(980 / $base-font-size)}em,
+  "wide": #{calc(1300 / $base-font-size)}em,
+);

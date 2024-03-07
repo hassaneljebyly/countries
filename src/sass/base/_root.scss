@@ -1,0 +1,24 @@
+@use "../abstract/" as *;
+
+:root {
+
+  /* colors */
+  @each $color-name, $hsl-value in $colors {
+    --clr-#{$color-name}: #{$hsl-value};
+  }
+
+  /* font family */
+  --ff-primary: "#{$font-family}";
+
+  /* font sizes */
+  @each $font-size-name, $size in $font-sizes {
+    #{$font-size-name}: #{$size};
+  }
+
+  /* font weights */
+  @each $weight-name, $weight in $font-weights {
+    #{$weight-name}: #{$weight};
+  }
+
+  font-size: #{$base-font-size}px;
+}
