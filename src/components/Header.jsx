@@ -1,11 +1,10 @@
 import { useState } from 'react';
+import { setTheme, toggleTheme } from '../utilities/themeToggle';
 
-let defaultTheme = localStorage.getItem('theme') || 'light';
-console.log(defaultTheme);
-document.body.setAttribute('data-theme', defaultTheme);
+let defaultTheme = setTheme();
 
 export default function Header() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(defaultTheme);
 
   return (
     <header className="header">
@@ -16,12 +15,7 @@ export default function Header() {
           </a>
           <button
             className={`header__theme-toggle-btn ${theme}`}
-            onClick={() => {
-              const newTheme = theme === 'light' ? 'dark' : 'light';
-              document.body.setAttribute('data-theme', newTheme);
-              localStorage.setItem('theme', newTheme);
-              setTheme(newTheme);
-            }}
+            onClick={toggleTheme(theme, setTheme)}
           >
             <span className="header__theme-icon"></span>
             {theme === 'light' ? 'dark' : 'light'} mode
