@@ -1,0 +1,23 @@
+@use "../abstract/variables" as *;
+@use "sass:map";
+
+@mixin mq($size, $direction) {
+  @if $direction ==up {
+    $direction: max
+  }
+
+  @if $direction ==down {
+    $direction: min
+  }
+
+  @media (#{$direction}-width: #{map.get($breakpoints, $size)}) {
+    @content;
+  }
+}
+
+@mixin custom-mq($size, $direction) {
+
+  @media (#{$direction}-width: $size) {
+    @content;
+  }
+}

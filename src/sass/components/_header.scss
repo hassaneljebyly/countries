@@ -1,0 +1,102 @@
+@use "../abstract/mixin" as *;
+
+.header {
+  background-color: var(--_header-background);
+  position: sticky;
+  top: 0;
+  box-shadow: 0px -20px 30px var(--_header-box-shadow);
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1.35em;
+  }
+
+  &__home-link {
+    display: inline-block;
+    text-decoration: none;
+    font-size: calc(var(--fs-200) - .08rem);
+    font-weight: var(--fw-extraBold);
+    color: inherit;
+
+    // only works on block elements
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
+    @include mq(tablet, up) {
+      font-size: calc(var(--fs-100) - .08rem);
+    }
+  }
+
+  &__theme-toggle-btn {
+    --_dark-theme-icon: url("../assets/icons/sunny-outline.svg");
+    --_light-theme-icon: url("../assets/icons/moon-outline.svg");
+    --_display-dark-icon: none;
+    --_display-light-icon: block;
+    border: 0;
+    background-color: transparent;
+    color: inherit;
+    font-weight: var(--fw-semiBold);
+    text-transform: capitalize;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+
+    @include mq(tablet, up) {
+      font-size: calc(var(--fs-100) - .08rem);
+    }
+
+    &.dark {
+      --_display-dark-icon: block;
+      --_display-light-icon: none;
+    }
+  }
+
+  &__theme-icon {
+    display: inline-block;
+    width: 1.1em;
+    aspect-ratio: 1;
+    translate: -60% 20%;
+    position: relative;
+    pointer-events: none;
+
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-repeat: no-repeat;
+      background-size: contain;
+      transform-origin: center center;
+      pointer-events: none;
+      animation: toggleIcon 500ms ease forwards;
+    }
+
+    &::after {
+      background-image: var(--_light-theme-icon);
+      display: var(--_display-light-icon);
+    }
+
+    &::before {
+      background-image: var(--_dark-theme-icon);
+      display: var(--_display-dark-icon);
+    }
+  }
+}
+
+
+
+@keyframes toggleIcon {
+  0% {
+    rotate: 0deg;
+    scale: 0;
+  }
+
+  100% {
+    rotate: 360deg;
+    scale: 1;
+  }
+}
