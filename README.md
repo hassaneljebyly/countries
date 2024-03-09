@@ -76,9 +76,7 @@ To see how you can add code snippets, see below:
 ```
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
-}
+
 ```
 
 ```js
@@ -113,6 +111,6 @@ Twitter - [@HassanElJebyly](https://twitter.com/hassaneljebyly)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+- built the search form following [a11ymatters](https://www.a11ymatters.com/pattern/accessible-search/) guidelines
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- the selection menu was built with the help of (ux.stackexchange)[https://ux.stackexchange.com/questions/145490/what-accessibility-pattern-for-filter-sort-dropdown], [w3](https://www.w3.org/WAI/tutorials/menus/flyout/) and [w3 disclosure patterns](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/)

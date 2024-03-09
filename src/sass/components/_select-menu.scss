@@ -1,0 +1,66 @@
+.select-menu {
+  width: clamp(10.625rem, 10.0893rem + 2.6786vw, 12.5rem);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-semiBold);
+  color: inherit;
+  background-color: transparent;
+  border: 0;
+  display: grid;
+  grid-template-rows: auto 0fr;
+
+  &:has([aria-expanded="true"]) {
+    grid-template-rows: auto auto;
+  }
+
+  &__button {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    line-height: 0;
+    padding-block: 2em;
+    padding-inline: 1.75em;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    background-color: var(--_search-input-background);
+    box-shadow: var(--_box-shadow);
+    text-transform: capitalize;
+  }
+
+  &__icon {
+    position: absolute;
+    width: 15px;
+    aspect-ratio: 1;
+    top: 50%;
+    right: 1.75em;
+    translate: 60% -50%;
+    transform-origin: center;
+    background-image: url("../assets/icons/chevron-down-outline.svg");
+    transition: rotate 250ms ease;
+    filter: invert(var(--_search-icon-invert));
+    pointer-events: none;
+  }
+
+  &__option-group {
+    overflow: hidden;
+    margin-top: .25em;
+    border-radius: 5px;
+    background-color: var(--_search-input-background);
+    box-shadow: var(--_box-shadow);
+  }
+
+  &__options {
+    padding-block: 1.25em;
+    padding-left: 1em;
+    text-transform: capitalize;
+    line-height: 0;
+    cursor: pointer;
+    transition: background 250ms ease;
+
+    &:hover {
+      background-color: var(--_hover-color);
+    }
+  }
+}

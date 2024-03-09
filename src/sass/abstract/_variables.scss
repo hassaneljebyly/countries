@@ -28,15 +28,15 @@ $colors: (
 // ## Typography
 
 $font-sizes: (
-  "--fs-100": clamp(1rem, 0.27vw + 0.95rem, 1.19rem),
-  "--fs-200": clamp(1.25rem, 0.48vw + 1.15rem, 1.58rem),
-  "--fs-300": clamp(1.56rem, 0.78vw + 1.41rem, 2.11rem),
-  "--fs-400": clamp(1.95rem, 1.23vw + 1.71rem, 2.81rem),
-  "--fs-500": clamp(2.44rem, 1.87vw + 2.07rem, 3.75rem),
-  "--fs-600": clamp(3.05rem, 2.78vw + 2.5rem, 5rem),
-  "--fs-700": clamp(3.81rem, 4.07vw + 3rem, 6.66rem),
-  "--fs-800": clamp(4.77rem, 5.87vw + 3.59rem, 8.88rem),
-  "--fs-900": clamp(5.96rem, 8.4vw + 4.28rem, 11.84rem),
+  "--fs-100":clamp(0.51rem, -0.02vw + 0.52rem, 0.5rem),
+  "--fs-200":clamp(0.64rem, 0.04vw + 0.63rem, 0.67rem),
+  "--fs-300":clamp(0.8rem, 0.13vw + 0.77rem, 0.89rem),
+  "--fs-400":clamp(1rem, 0.27vw + 0.95rem, 1.19rem),
+  "--fs-500":clamp(1.25rem, 0.48vw + 1.15rem, 1.58rem),
+  "--fs-600":clamp(1.56rem, 0.78vw + 1.41rem, 2.11rem),
+  "--fs-700":clamp(1.95rem, 1.23vw + 1.71rem, 2.81rem),
+  "--fs-800":clamp(2.44rem, 1.87vw + 2.07rem, 3.75rem),
+  "--fs-900":clamp(3.05rem, 2.78vw + 2.5rem, 5rem),
 );
 
 
