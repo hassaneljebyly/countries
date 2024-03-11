@@ -1,10 +1,17 @@
+@use '../abstract/mixin' as *;
+
 .form {
   --_box-shadow: var(--_input-box-shadow-color) 0px 2px 8px 0px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-
   margin-top: 3em;
+  position: relative;
+
+  @include mq(tablet, up) {
+    margin-bottom: 21vh;
+    margin-top: 6vh;
+  }
 
   &__search-input-container {
     --_display-cancel-button: 0;
@@ -67,4 +74,16 @@
     background-image: url("../assets/icons/search-outline.svg");
     filter: invert(var(--_search-icon-invert));
   }
+
+  .select-menu {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+
+    @include mq(tablet, up) {
+      left: 0;
+      top: 125%;
+    }
+  }
+
 }

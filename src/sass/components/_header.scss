@@ -5,6 +5,7 @@
   position: sticky;
   top: 0;
   box-shadow: 0px -20px 30px var(--_box-shadow-color);
+  z-index: 999;
 
   &__nav {
     display: flex;

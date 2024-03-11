@@ -1,11 +1,6 @@
-import { useState } from 'react';
-import { setTheme, toggleTheme } from '../utilities/themeToggle';
-
-let defaultTheme = setTheme();
+import ThemeToggleButton from './ui/ThemeToggleButton';
 
 export default function Header() {
-  const [theme, setTheme] = useState(defaultTheme);
-
   return (
     <header className="header">
       <div className="container">
@@ -13,13 +8,7 @@ export default function Header() {
           <a className="header__home-link" href="#">
             where in the world?
           </a>
-          <button
-            className={`header__theme-toggle-btn ${theme}`}
-            onClick={toggleTheme(theme, setTheme)}
-          >
-            <span className="header__theme-icon"></span>
-            {theme === 'light' ? 'dark' : 'light'} mode
-          </button>
+          <ThemeToggleButton />
         </nav>
       </div>
     </header>

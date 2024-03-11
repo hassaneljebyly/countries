@@ -8,7 +8,8 @@
 7 * add dynamic meta tags
 8 * animation
 9 * dynamic filter form 
-
+10 * make drop down menu up/down arrow navigation 
 
 !!!! you can search by region
 !!!! add focus
+!!!! add hover

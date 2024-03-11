@@ -1,5 +1,6 @@
 import Header from './components/Header';
 import Form from './components/Form';
+import CountriesList from './components/CountriesList';
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
             <Form />
           </div>
         </header>
+        <div className="container">
+          <CountriesList />
+        </div>
       </main>
     </>
   );

@@ -1,0 +1,11 @@
+.flex {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  margin-inline: -2.25em;
+  gap: 8.2vh 0;
+  margin-top: 5.2vh;
+
+  &>* {
+    margin-inline: auto;
+  }
+}

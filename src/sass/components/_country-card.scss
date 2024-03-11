@@ -1,0 +1,44 @@
+.country-card {
+
+  background-color: var(--_header-background);
+  box-shadow: var(--_input-box-shadow-color) 0px 2px 8px 0px;
+  border-radius: 7px;
+  width: clamp(14.25rem, 13.5893rem + 3.3036vw, 16.5625rem);
+  overflow: hidden;
+  position: relative;
+
+  &__image {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 5/3;
+  }
+
+  &__body {
+    padding: 1.70em 1.60em;
+    padding-bottom: 2.3em;
+  }
+
+  &__name {
+    font-size: var(--fs-400);
+    font-weight: var(--fw-extraBold);
+    margin-bottom: .55em;
+  }
+
+  &__info {
+    font-size: var(--fs-300);
+    font-weight: var(--fw-semiBold);
+    margin-bottom: .2em;
+    text-transform: capitalize;
+
+    span {
+      font-weight: var(--fw-light);
+    }
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0;
+    background-color: transparent;
+  }
+}
