@@ -1,0 +1,31 @@
+.back-btn {
+  border: 0;
+  outline: 0;
+  font-weight: var(--fw-semiBold);
+  text-transform: capitalize;
+  display: flex;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+  padding: .75em 4.25em;
+  border-radius: 5px;
+  background-color: var(--_header-background);
+  box-shadow: var(--_input-box-shadow-color) 0px 2px 8px 0px;
+  color: inherit;
+  cursor: pointer;
+
+
+  span {
+    display: block;
+    line-height: 0;
+  }
+
+  &__icon {
+    padding: .5em 1em;
+    background-image: url("../assets/icons/iconmonstr-arrow-left-lined.svg");
+    background-repeat: no-repeat;
+    scale: 1.5 1;
+    transform-origin: left;
+    filter: invert(var(--_search-icon-invert));
+  }
+}

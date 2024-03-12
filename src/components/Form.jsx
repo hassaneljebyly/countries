@@ -3,9 +3,11 @@ import SearchInput from './ui/SearchInput';
 
 export default function Form() {
   return (
-    <form className="form">
-      <SearchInput />
-      <SelectMenu />
-    </form>
+    <div className="container">
+      <form className="form">
+        <SearchInput />
+        <SelectMenu />
+      </form>
+    </div>
   );
 }

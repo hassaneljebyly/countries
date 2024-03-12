@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import Form from './components/Form';
 import CountriesList from './components/CountriesList';
+import Details from './components/Details';
 
 function App() {
   return (
@@ -8,13 +9,10 @@ function App() {
       <Header />
       <main>
         <header className="controls-header">
-          <div className="container">
-            <Form />
-          </div>
+          <Form />
         </header>
-        <div className="container">
-          <CountriesList />
-        </div>
+        <CountriesList />
+        <Details />
       </main>
     </>
   );
