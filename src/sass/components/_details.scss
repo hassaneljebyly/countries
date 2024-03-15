@@ -34,7 +34,6 @@
       padding-top: 0;
     }
 
-
     @include mq(tablet, up) {
       padding-top: 2.25em;
       padding-left: 0;
@@ -48,6 +47,7 @@
     display: block;
     width: 100%;
     max-width: 560px;
+    aspect-ratio: 3/2;
 
     @include mq(desktop, up) {
       margin-inline: auto;
@@ -93,6 +93,9 @@
     list-style: none;
     margin-top: auto;
 
+    span {
+      font-weight: var(--fw-light);
+    }
 
     li:first-child {
       @include mq(desktop, up) {

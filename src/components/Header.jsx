@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import ThemeToggleButton from './ui/ThemeToggleButton';
 
 export default function Header() {
@@ -5,9 +6,9 @@ export default function Header() {
     <header className="header">
       <div className="container">
         <nav className="header__nav">
-          <a className="header__home-link" href="#">
+          <Link className="header__home-link" to="/countries">
             where in the world?
-          </a>
+          </Link>
           <ThemeToggleButton />
         </nav>
       </div>

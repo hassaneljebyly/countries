@@ -1,13 +1,13 @@
+import { useRouteLoaderData } from 'react-router-dom';
 import CountriesCard from './ui/CountriesCard';
 
 export default function CountriesList() {
-  const array = new Array(20).fill(null);
-  console.log(array);
+  const { countries } = useRouteLoaderData('root');
   return (
     <div className="container">
       <ul className="flex">
-        {array.map((card, i) => (
-          <CountriesCard key={i} />
+        {countries.map((country, i) => (
+          <CountriesCard key={i} {...country} />
         ))}
       </ul>
     </div>

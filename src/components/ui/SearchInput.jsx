@@ -14,9 +14,6 @@ export default function SearchInput() {
         />
         <span className="form__cancel-search-input-icon"></span>
       </div>
-      <label className="sr-only" htmlFor="filter">
-        filter by region
-      </label>
     </>
   );
 }
