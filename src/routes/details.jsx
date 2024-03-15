@@ -68,7 +68,7 @@ export default function Details() {
           </div>
           <ul className="details__border-countries-list">
             <li>
-              Border Countries: <span>{borders.length || 'unknown'}</span>
+              Border Countries: <span>{borders.length != 0 || 'unknown'}</span>
             </li>
             {borders.length
               ? borders.map((country) => (

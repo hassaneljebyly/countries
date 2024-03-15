@@ -18,7 +18,9 @@ export async function getCountries() {
     throw Error(error);
   }
 }
-
+/**
+ * @param  {String} countryName
+ */
 export async function getCountriesByName(countryName) {
   try {
     let countries = localStorage.getItem('countries');
@@ -43,15 +45,16 @@ export async function getCountriesByName(countryName) {
     throw Error(error);
   }
 }
-
+/**
+ * @param  {Array.<string>} bordersList
+ */
 export async function getCountryBorders(bordersList) {
-  console.log(!bordersList.length);
   try {
     const response = await fetch(
       `${API_BASE_URL}alpha?codes=${bordersList.join(',')}&fields=name`
     );
     const borderCountries = await response.json();
-    const borderCountriesNames = (await bordersList.length)
+    const borderCountriesNames = bordersList.length
       ? borderCountries.map((country) => {
           return country.name.common;
         })
