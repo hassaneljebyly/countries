@@ -3,7 +3,7 @@ import Root from './routes/root';
 import Details from './routes/details';
 import Home from './routes/home';
 import { CountryLoader, countriesLoader } from './routes/loaders';
-import { createContext, useState } from 'react';
+import FormContextProvider from './context/FormContextProvider';
 
 const router = createBrowserRouter([
   {
@@ -23,24 +23,12 @@ const router = createBrowserRouter([
   },
 ]);
 
-export const SomeContext = createContext({
-  inputValue: '',
-  regionSelected: '',
-});
-
 function App() {
-  const [input, setInput] = useState('');
-  function handleInputChange(e) {
-    setInput(e.target.value);
-    console.log(input);
-  }
   return (
     <>
-      <SomeContext.Provider
-        value={{ inputValue: input, regionSelected: '', handleInputChange }}
-      >
+      <FormContextProvider>
         <RouterProvider router={router} />
-      </SomeContext.Provider>
+      </FormContextProvider>
     </>
   );
 }

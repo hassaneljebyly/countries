@@ -59,7 +59,9 @@
     cursor: pointer;
     transition: background 250ms ease;
 
+    &[aria-selected="true"],
     &:hover {
+
       background-color: var(--_hover-color);
     }
   }

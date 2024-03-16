@@ -1,13 +1,15 @@
 import { useRouteLoaderData } from 'react-router-dom';
 import CountriesCard from './ui/CountriesCard';
-import { useContext } from 'react';
-import { SomeContext } from './../App';
+import useFormContext from './../hooks/useFormContext';
 
 export default function CountriesList() {
   const { countries } = useRouteLoaderData('root');
-  const { inputValue } = useContext(SomeContext);
+  const { searchInput, selectInput } = useFormContext();
   const filteredCountryList = countries.filter((country) => {
-    if (country.name.common.toLowerCase().includes(inputValue.toLowerCase()))
+    if (
+      (selectInput === '' || selectInput === country.region.toLowerCase()) &&
+      country.name.common.toLowerCase().includes(searchInput.toLowerCase())
+    )
       return country;
   });
   return (

@@ -1,9 +1,8 @@
-import { useContext } from 'react';
-import { SomeContext } from '../../App';
+import useFormContext from './../../hooks/useFormContext';
 
 export default function SearchInput() {
-  const { inputValue, handleInputChange } = useContext(SomeContext);
-  console.log(inputValue);
+  const { searchInput, handleInputChange, handleClearSearchInput } =
+    useFormContext();
   return (
     <>
       <label className="sr-only" htmlFor="search">
@@ -15,11 +14,16 @@ export default function SearchInput() {
           className="form__search-input"
           id="search"
           type="search"
-          value={inputValue}
+          value={searchInput}
           placeholder="Search for a country..."
           onChange={handleInputChange}
         />
-        <span className="form__cancel-search-input-icon"></span>
+        {searchInput.length != '' && (
+          <span
+            onClick={handleClearSearchInput}
+            className="form__cancel-search-input-icon"
+          ></span>
+        )}
       </div>
     </>
   );
