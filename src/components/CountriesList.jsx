@@ -12,6 +12,7 @@ export default function CountriesList() {
     )
       return country;
   });
+
   return (
     <div className="container">
       <ul className="grid">

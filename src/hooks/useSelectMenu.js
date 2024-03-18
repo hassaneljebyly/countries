@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import useFormContext from './useFormContext';
+import { getRegionsNames } from '../utilities/countries';
 
 export default function useSelectMenu() {
   const { handleSelectChange, selectInput } = useFormContext();
   const [filterExpanded, setFilterExpanded] = useState(false);
   const [selectedOption, setSelectedOption] = useState(selectInput);
+  const [selectOptions, setSelectOptions] = useState([]);
 
   function selectOption(e) {
     // resets selection if same selection clicked twice
@@ -34,5 +36,15 @@ export default function useSelectMenu() {
     }
   }
 
-  return { selectedOption, filterExpanded, handleClick, handleKeyDown };
+  useEffect(() => {
+    getRegionsNames().then((data) => setSelectOptions(data));
+  }, []);
+
+  return {
+    selectedOption,
+    selectOptions,
+    filterExpanded,
+    handleClick,
+    handleKeyDown,
+  };
 }

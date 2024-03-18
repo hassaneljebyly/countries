@@ -2,8 +2,13 @@ import { options } from '../../utilities/variables';
 import useSelectMenu from './../../hooks/useSelectMenu';
 
 export default function SelectMenu() {
-  const { selectedOption, filterExpanded, handleClick, handleKeyDown } =
-    useSelectMenu();
+  const {
+    selectedOption,
+    filterExpanded,
+    selectOptions,
+    handleClick,
+    handleKeyDown,
+  } = useSelectMenu();
   return (
     <div aria-label="filter" className="select-menu">
       <button
@@ -22,7 +27,7 @@ export default function SelectMenu() {
         ></span>
       </button>
       <ul id="filter-menu" role="select" className="select-menu__option-group">
-        {options.map((option) => (
+        {selectOptions.map((option) => (
           <li
             key={option}
             className="select-menu__options"

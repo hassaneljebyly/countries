@@ -17,6 +17,7 @@ export default function CountriesCard({
         className="country-card__image"
         src={svg || placeHolderImage}
         alt={alt || 'flag image unknown'}
+        loading="lazy"
       />
       <div className="country-card__body">
         <h2 className="country-card__name">{common || 'unknown'}</h2>
@@ -28,7 +29,7 @@ export default function CountriesCard({
           region: <span>{region || 'unknown'}</span>
         </p>
         <p className="country-card__info">
-          capital: <span>{capital || 'unknown'}</span>
+          capital: <span>{!capital.length ? 'unknown' : capital[0]}</span>
         </p>
       </div>
       <Link to={`${linkId}`} className="country-card__link">

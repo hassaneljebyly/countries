@@ -36,6 +36,7 @@ export default function Details() {
             className="details__image"
             src={svg || placeHolderImage}
             alt={alt || 'flag image unknown'}
+            loading="lazy"
           />
         </div>
         <div className="details__column">

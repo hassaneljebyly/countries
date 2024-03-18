@@ -1,6 +1,4 @@
-const API_BASE_URL = 'https://restcountries.com/v3.1/';
-const FIELDS =
-  'fields=name,flags,population,region,capital,region,subregion,tld,currencies,languages,borders';
+import { API_BASE_URL, FIELDS } from './variables';
 
 export async function getCountries() {
   try {
@@ -47,6 +45,7 @@ export async function getCountriesByName(countryName) {
 }
 /**
  * @param  {Array.<string>} bordersList
+ * @return {Array.<string>} borderCountriesNames
  */
 export async function getCountryBorders(bordersList) {
   try {
@@ -64,7 +63,10 @@ export async function getCountryBorders(bordersList) {
     throw Error(error);
   }
 }
-
+/**
+ * @param  {{language:{official: String, common: String}}} nativeName
+ * @returns String
+ */
 export function getNativeName(nativeName) {
   if (!nativeName) return 'unknown';
   const nativeNames = [];
@@ -72,4 +74,30 @@ export function getNativeName(nativeName) {
     nativeNames.push(value.official);
   }
   return nativeNames.join(', ');
+}
+
+/**
+ * @returns {Array.<String>} filterOptions
+ */
+export async function getRegionsNames() {
+  let filterOptions;
+  try {
+    if (!localStorage.getItem('regions')) {
+      const response = await fetch(`${API_BASE_URL}all?fields=region`);
+      const data = await response.json();
+      const regions = new Set(
+        data.map(({ region }) => {
+          return region.toLowerCase();
+        })
+      );
+      filterOptions = Array.from(regions);
+      localStorage.setItem('regions', filterOptions);
+    } else {
+      filterOptions = localStorage.getItem('regions').split(',');
+    }
+
+    return filterOptions;
+  } catch (error) {
+    throw Error(error);
+  }
 }
