@@ -1,4 +1,3 @@
-import { options } from '../../utilities/variables';
 import useSelectMenu from './../../hooks/useSelectMenu';
 
 export default function SelectMenu() {
