@@ -12,7 +12,7 @@ export async function getCountries() {
       return countries;
     }
   } catch (error) {
-    throw Error(error);
+    throw Error('internal error');
   }
 }
 /**
@@ -39,7 +39,7 @@ export async function getCountriesByName(countryName) {
     country.borders = borderCountriesNames;
     return country;
   } catch (error) {
-    throw Error(error);
+    throw Error('internal error');
   }
 }
 /**
@@ -59,7 +59,7 @@ export async function getCountryBorders(bordersList) {
       : [];
     return borderCountriesNames;
   } catch (error) {
-    throw Error(error);
+    throw Error('internal error');
   }
 }
 /**
@@ -97,6 +97,6 @@ export async function getRegionsNames() {
 
     return filterOptions;
   } catch (error) {
-    throw Error(error);
+    throw Error('internal error');
   }
 }

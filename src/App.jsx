@@ -4,6 +4,7 @@ import Details from './routes/details';
 import Home from './routes/home';
 import { CountryLoader, countriesLoader } from './routes/loaders';
 import FormContextProvider from './context/FormContextProvider';
+import ErrorElement from './components/ErrorElement';
 
 const router = createBrowserRouter([
   {
@@ -11,6 +12,7 @@ const router = createBrowserRouter([
     element: <Root />,
     id: 'root',
     loader: countriesLoader,
+    errorElement: <ErrorElement />,
     children: [
       {
         index: true,
@@ -20,7 +22,6 @@ const router = createBrowserRouter([
         path: ':countryId',
         element: <Details />,
         loader: CountryLoader,
-        errorElement: <p>error not found</p>,
       },
     ],
   },

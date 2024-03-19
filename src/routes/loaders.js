@@ -5,7 +5,7 @@ export async function countriesLoader() {
     let countries = await getCountries();
     return { countries };
   } catch (error) {
-    console.log(error);
+    throw Error('internal error');
   }
 }
 
@@ -14,6 +14,6 @@ export async function CountryLoader({ params }) {
     const country = await getCountriesByName(params.countryId);
     return { country };
   } catch (error) {
-    console.log(error);
+    throw Error('internal error');
   }
 }

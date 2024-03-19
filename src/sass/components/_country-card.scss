@@ -7,7 +7,7 @@
   overflow: hidden;
   position: relative;
 
-  &:hover &__body {
+  &:hover {
     background-color: var(--_hover-color);
   }
 

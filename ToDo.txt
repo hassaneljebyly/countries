@@ -1,13 +1,5 @@
 
-********* * think about animation ahead
-4 * make sure to always document 
-6 * alway commit features
 7 * add dynamic meta tags
-8 * animation
-10 * make drop down menu up/down arrow navigation 
 11 * error page and handling 
 
-!!!! you can search by region
-!!!! add focus
-!!!! add hover
 
