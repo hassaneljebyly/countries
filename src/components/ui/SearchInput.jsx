@@ -9,7 +9,7 @@ export default function SearchInput() {
         search for country
       </label>
       <div className="form__search-input-container">
-        <span className="form__search-input-icon"></span>
+        <span className="form__search-input-icon invertIcon"></span>
         <input
           className="form__search-input"
           id="search"
@@ -21,7 +21,7 @@ export default function SearchInput() {
         {searchInput.length != '' && (
           <span
             onClick={handleClearSearchInput}
-            className="form__cancel-search-input-icon"
+            className="form__cancel-search-input-icon invertIcon"
           ></span>
         )}
       </div>

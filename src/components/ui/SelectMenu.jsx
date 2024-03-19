@@ -19,7 +19,7 @@ export default function SelectMenu() {
       >
         {selectedOption === '' ? 'Filter by Region' : selectedOption}
         <span
-          className="select-menu__icon"
+          className="select-menu__icon invertIcon"
           style={{
             rotate: filterExpanded && '180deg',
           }}

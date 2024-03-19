@@ -119,5 +119,9 @@
     border-radius: 5px;
     background-color: var(--_header-background);
     box-shadow: var(--_input-box-shadow-color) 0px 2px 8px 0px;
+
+    &:hover {
+      background-color: var(--_hover-color);
+    }
   }
 }

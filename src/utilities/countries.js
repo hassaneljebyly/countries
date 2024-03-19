@@ -1,5 +1,4 @@
 import { API_BASE_URL, FIELDS } from './variables';
-
 export async function getCountries() {
   try {
     let countries = localStorage.getItem('countries');

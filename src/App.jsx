@@ -12,7 +12,10 @@ const router = createBrowserRouter([
     id: 'root',
     loader: countriesLoader,
     children: [
-      { index: true, element: <Home /> },
+      {
+        index: true,
+        element: <Home />,
+      },
       {
         path: ':countryId',
         element: <Details />,

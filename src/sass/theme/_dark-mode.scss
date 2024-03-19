@@ -43,3 +43,8 @@ body[data-theme="dark"] {
   color: var(--clr-100);
   background-color: var(--clr-900);
 }
+
+
+.invertIcon {
+  filter: invert(var(--_search-icon-invert));
+}

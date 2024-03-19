@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react';
 import useFormContext from './useFormContext';
 import { getRegionsNames } from '../utilities/countries';
+import {
+  closeMenuAndFocus,
+  focusNextOption,
+  focusSelected,
+} from '../utilities/selectMenuFunctions';
 
 export default function useSelectMenu() {
   const { handleSelectChange, selectInput } = useFormContext();
@@ -22,6 +27,7 @@ export default function useSelectMenu() {
   function handleClick(e) {
     const isButton = e.target.getAttribute('type') === 'button';
     if (isButton) {
+      focusSelected();
       setFilterExpanded(!filterExpanded);
     } else {
       selectOption(e);
@@ -29,9 +35,13 @@ export default function useSelectMenu() {
   }
 
   function handleKeyDown(e) {
-    const isSelected = (e.code && e.code === 'Enter') || e.code === 'Space';
+    const isSelected = e.code && e.code === 'Enter';
+
+    e.preventDefault();
+    focusNextOption(e);
+    closeMenuAndFocus(e.code, setFilterExpanded); // close menu on Escape or Tab just like html select tag
+
     if (isSelected) {
-      e.preventDefault(); // prevent Space bar scroll
       selectOption(e);
     }
   }

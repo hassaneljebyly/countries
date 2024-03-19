@@ -1,6 +1,5 @@
 
 ********* * think about animation ahead
-3 * build ui component and their small interactions 
 4 * make sure to always document 
 6 * alway commit features
 7 * add dynamic meta tags

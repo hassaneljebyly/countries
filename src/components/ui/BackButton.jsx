@@ -9,7 +9,7 @@ export default function BackButton() {
         navigate(-1);
       }}
     >
-      <span className="back-btn__icon"></span>
+      <span className="back-btn__icon invertIcon"></span>
       <span className="back-btn__text">back</span>
     </button>
   );

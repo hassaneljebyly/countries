@@ -39,7 +39,6 @@
     transform-origin: center;
     background-image: url("../assets/icons/chevron-down-outline.svg");
     transition: rotate 250ms ease;
-    filter: invert(var(--_search-icon-invert));
     pointer-events: none;
   }
 
@@ -61,7 +60,6 @@
 
     &[aria-selected="true"],
     &:hover {
-
       background-color: var(--_hover-color);
     }
   }

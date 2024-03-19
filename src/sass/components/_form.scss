@@ -61,7 +61,6 @@
     background-image: url("../assets/icons/close-outline.svg");
     opacity: var(--_display-cancel-button);
     cursor: pointer;
-    filter: invert(var(--_search-icon-invert));
   }
 
   &__search-input-icon {
@@ -72,7 +71,6 @@
     left: 1.75em;
     translate: 0 -55%;
     background-image: url("../assets/icons/search-outline.svg");
-    filter: invert(var(--_search-icon-invert));
   }
 
   .select-menu {
