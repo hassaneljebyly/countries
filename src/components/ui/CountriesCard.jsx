@@ -32,7 +32,7 @@ export default function CountriesCard({
           capital: <span>{!capital.length ? 'unknown' : capital[0]}</span>
         </p>
       </div>
-      <Link to={`${linkId}`} className="country-card__link">
+      <Link to={`${linkId}`} className="country-card__link focus">
         <span className="sr-only">see more details</span>
       </Link>
     </li>
