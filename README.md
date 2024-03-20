@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution](https://www.frontendmentor.io/solutions/countries-api-page-react-reactrouterdom-api-scss-vite-ALW1V3cPpd)
+- [Live Site](https://hassaneljebyly.github.io/countries/)
 
 ## My process
 
@@ -56,8 +56,11 @@ since we can't style `<option>` I decided to make a custom select menu that work
 - arrow up/down navigation
 - when select menu is open preselected element gets focus if it doesn't exists then first element or gets focus
 - when Escape or Tab key are pushed it closes the menu while giving focus to menu button
+- also dynamic select options
 
 ```js
+import useSelectMenu from './../../hooks/useSelectMenu';
+
 export default function SelectMenu() {
   const {
     selectedOption,
@@ -67,7 +70,7 @@ export default function SelectMenu() {
     handleKeyDown,
   } = useSelectMenu();
   return (
-    <div aria-label="filter" className="select-menu">
+    <div aria-label="filter menu" className="select-menu">
       <button
         className="select-menu__button"
         type="button"
@@ -83,12 +86,12 @@ export default function SelectMenu() {
           }}
         ></span>
       </button>
-      <ul id="filter-menu" role="select" className="select-menu__option-group">
+      <ul id="filter-menu" role="menu" className="select-menu__option-group">
         {selectOptions.map((option) => (
           <li
             key={option}
             className="select-menu__options"
-            role="option"
+            role="menuitem"
             tabIndex={filterExpanded ? '0' : '-1'}
             data-value={option}
             aria-selected={selectedOption === option}

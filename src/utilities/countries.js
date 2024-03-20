@@ -25,11 +25,11 @@ export async function getCountriesByName(countryName) {
 
     if (countries) {
       country = JSON.parse(countries).filter(
-        (country) => country.name.common === countryName.replace('_', ' ')
+        (country) => country.name.common === countryName.replaceAll('_', ' ')
       )[0];
     } else {
       const response = await fetch(
-        `${API_BASE_URL}name/${countryName.replace('_', '%20')}?${FIELDS}`
+        `${API_BASE_URL}name/${countryName.replaceAll('_', '%20')}?${FIELDS}`
       );
       const data = await response.json();
       country = data[0];
@@ -99,4 +99,8 @@ export async function getRegionsNames() {
   } catch (error) {
     throw Error('internal error');
   }
+}
+
+export function setTitleTag(country_name) {
+  document.querySelector('head title').innerHTML = country_name;
 }

@@ -1,6 +1,6 @@
 import { Link, useLoaderData } from 'react-router-dom';
 import BackButton from './../components/ui/BackButton';
-import { getNativeName } from '../utilities/countries';
+import { getNativeName, setTitleTag } from '../utilities/countries';
 import placeHolderImage from '../assets/images/placeholder-image.webp';
 
 export default function Details() {
@@ -25,6 +25,8 @@ export default function Details() {
     : 'unknown';
   const currency = currencies ? Object.entries(currencies)[0][0] : 'unknown';
   const usedLanguages = Object.values(languages || ['unknown']).join(', ');
+
+  setTitleTag(name.common);
   return (
     <div className="container">
       <div className="details">
@@ -73,10 +75,10 @@ export default function Details() {
             </li>
             {borders.length
               ? borders.map((country) => (
-                  <li key={country.replace(' ', '_')}>
+                  <li key={country.replaceAll(' ', '_')}>
                     <Link
                       className="details__border-country"
-                      to={`/countries/${country.replace(' ', '_')}`}
+                      to={`/countries/${country.replaceAll(' ', '_')}`}
                     >
                       {country}
                     </Link>

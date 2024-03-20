@@ -9,7 +9,7 @@ export default function SelectMenu() {
     handleKeyDown,
   } = useSelectMenu();
   return (
-    <div aria-label="filter" className="select-menu">
+    <div aria-label="filter menu" className="select-menu">
       <button
         className="select-menu__button"
         type="button"
@@ -25,12 +25,12 @@ export default function SelectMenu() {
           }}
         ></span>
       </button>
-      <ul id="filter-menu" role="select" className="select-menu__option-group">
+      <ul id="filter-menu" role="menu" className="select-menu__option-group">
         {selectOptions.map((option) => (
           <li
             key={option}
             className="select-menu__options"
-            role="option"
+            role="menuitem"
             tabIndex={filterExpanded ? '0' : '-1'}
             data-value={option}
             aria-selected={selectedOption === option}

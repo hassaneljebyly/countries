@@ -10,7 +10,7 @@ export default function CountriesCard({
 }) {
   // was gonna do toLowerCase on the linkId but county names are unpredictable,
   // in the api you have to use the name as it is
-  const linkId = common.replace(' ', '_');
+  const linkId = common.replaceAll(' ', '_');
   return (
     <li className="country-card">
       <img
